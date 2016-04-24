@@ -1,44 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 
 namespace GoatAPI.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    [Route("v1/quote")]
+    public class QuoteController : Controller
     {
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public object Get()
         {
-            return new string[] { "value1", "value2" };
+            var quotes = new List<string>
+            {
+                "Here we goat again",
+                "You have goat to be kidding me",
+                "Row, row, row, your goat",
+                "Shit just goat serious",
+                "Calm down, I goat this",
+                "Whatever floats your goat",
+                "Goat milk?"
+            };
+
+            var random = new Random().Next(quotes.Count);
+
+            return new { id = random, value = quotes[random] };
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
+        //[HttpPost]
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
