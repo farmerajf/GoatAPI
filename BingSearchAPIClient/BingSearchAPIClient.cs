@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace BingSearchClient
 {
-    public class BingSearchAPIClient
+    public class BingSearchAPIClient : IBingSearchAPIClient
     {
         private readonly string _apiKey;
         private const string ApiBaseUri = "https://bingapis.azure-api.net/api/v5/images/search";
