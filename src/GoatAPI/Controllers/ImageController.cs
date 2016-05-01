@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BingSearchClient;
 using Microsoft.AspNet.Mvc;
@@ -20,8 +21,9 @@ namespace GoatAPI.Controllers
         public async Task<IEnumerable<string>> Get()
         {
             var result = await _bingSearchApiClient.SearchImagesAsync("goat");
-            var randomResultIndex = new Random().Next(result.Value.Count);
-            return new[] { "url", result.Value[randomResultIndex].ThumbnailUrl };
+            var resultImages = result.Value.ToList();
+            var randomResultIndex = new Random().Next(resultImages.Count());
+            return new[] { "url", resultImages[randomResultIndex].ThumbnailUrl };
         }
     }
 }

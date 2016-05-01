@@ -9,7 +9,7 @@ namespace BingSearchClient
     public class BingSearchAPIClient : IBingSearchAPIClient
     {
         private readonly string _apiKey;
-        private const string ApiBaseUri = "https://bingapis.azure-api.net/api/v5/images/search";
+        private readonly Uri _apiBaseUri = new Uri("https://bingapis.azure-api.net/api/v5/images/search");
 
         public BingSearchAPIClient(string apiKey)
         {
@@ -20,12 +20,13 @@ namespace BingSearchClient
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(ApiBaseUri);
+                client.BaseAddress =_apiBaseUri;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _apiKey);
 
-                var response = await client.GetAsync(ApiBaseUri + "?q=" + query);
+                var uriToCall = new UriBuilder(_apiBaseUri) {Query = "q=" + query};
+                var response = await client.GetAsync(uriToCall.Uri);
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();

@@ -4,7 +4,7 @@ namespace BingSearchClient
 {
     public class BingSearchResponse
     {
-        public List<Value> Value { get; set; }
+        public IEnumerable<Value> Value { get; set; }
     }
 
     public class Value
