@@ -2,13 +2,17 @@
 
 namespace BingSearchClient
 {
+    using Newtonsoft.Json;
+
+    /// <summary>
+    /// Models the deserialized response from a Bing search.
+    /// </summary>
     public class BingSearchResponse
     {
-        public IEnumerable<Value> Value { get; set; }
-    }
-
-    public class Value
-    {
-        public string ThumbnailUrl { get; set; }
+        /// <summary>
+        /// The search results.
+        /// </summary>
+        [JsonProperty("Value")]
+        public IEnumerable<GoatImage> GoatImages { get; set; }
     }
 }
