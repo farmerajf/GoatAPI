@@ -31,10 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BingSearchAPIClient.cs" />
+    <Compile Include="SearchClient.cs" />
     <Compile Include="BingSearchResponse.cs" />
-    <Compile Include="IBingSearchAPIClient.cs" />
+    <Compile Include="ISearchClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GoatImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

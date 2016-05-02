@@ -19,6 +19,9 @@ namespace GoatAPI
             Configuration = builder.Build();
         }
 
+        /// <summary>
+        /// The configuration.
+        /// </summary>
         public IConfigurationRoot Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -26,7 +29,7 @@ namespace GoatAPI
         {
             // Add framework services.
             services.AddMvc();
-            services.AddTransient<IBingSearchAPIClient>(x => new BingSearchAPIClient(Configuration.Get<string>("BingSearchAPIKey")));
+            services.AddTransient<ISearchClient>(x => new SearchClient(Configuration.Get<string>("BingSearchAPIKey")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

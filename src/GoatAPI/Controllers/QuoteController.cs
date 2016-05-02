@@ -4,10 +4,12 @@ using Microsoft.AspNet.Mvc;
 
 namespace GoatAPI.Controllers
 {
+    /// <summary>
+    /// Handles routes for quotes.
+    /// </summary>
     [Route("v1/quote")]
     public class QuoteController : Controller
     {
-        // GET: api/values
         [HttpGet]
         public object Get()
         {
