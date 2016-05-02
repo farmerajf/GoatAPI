@@ -1,8 +1,8 @@
-namespace BingSearchClient
-{
-	using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-	/// <summary>
+namespace GoatAPI.Clients.BingSearchClient
+{
+    /// <summary>
 	/// A GoatAPI Bing search result.
 	/// </summary>
 	[JsonObject("Value")]
