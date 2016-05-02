@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace BingSearchClient
+namespace GoatAPI.Clients.BingSearchClient
 {
 	/// <summary>
 	/// Searches the Bing API.

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace BingSearchClient
+namespace GoatAPI.Clients.BingSearchClient
 {
-    using Newtonsoft.Json;
-
     /// <summary>
     /// Models the deserialized response from a Bing search.
     /// </summary>

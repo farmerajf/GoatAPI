@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BingSearchClient;
+using GoatAPI.Clients.BingSearchClient;
 using Microsoft.AspNet.Mvc;
 
 namespace GoatAPI.Controllers

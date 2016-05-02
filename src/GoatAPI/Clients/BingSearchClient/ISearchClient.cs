@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace BingSearchClient
+namespace GoatAPI.Clients.BingSearchClient
 {
     /// <summary>
     /// Models the Bing search API

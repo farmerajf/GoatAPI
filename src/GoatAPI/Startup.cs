@@ -1,4 +1,4 @@
-﻿using BingSearchClient;
+﻿using GoatAPI.Clients.BingSearchClient;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
