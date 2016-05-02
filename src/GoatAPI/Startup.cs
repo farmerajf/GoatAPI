@@ -14,6 +14,7 @@ namespace GoatAPI
             // Set up configuration sources.
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
+                .AddJsonFile("apikeys.json")
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
